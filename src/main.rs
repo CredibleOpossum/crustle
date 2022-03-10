@@ -4,15 +4,6 @@ use rand::seq::SliceRandom;
 use std::collections::{HashMap, HashSet};
 use text_io::read;
 
-#[inline]
-pub fn unwrap_abort<T>(o: Option<T>) -> T {
-    use std::process;
-    match o {
-        Some(t) => t,
-        None => process::abort(),
-    }
-}
-
 #[derive(Debug, Copy, Clone, PartialEq)]
 enum KeyResult {
     // Use enum to give a name to each state the key can be in
